@@ -11,7 +11,10 @@
   <div class="columns">
     <div class="column is-two-fifths">
       <h2>From birthday parites, to events and functions, we cater for all.</h2>
+      <br />
       <p>For any catering inquires please contact us through phone or leave your details below and we will get back to you as soon as possible</p>
+      <br />
+
       <label>
         Name:<br />
         <input type="text" />
@@ -54,8 +57,13 @@
     color: white;
   }
 
+  input {
+    width: 12cm;
+    margin-bottom: 0.4cm;
+  }
+
   .cateringInfo {
-    height: 10ch;
-    width: 20ch;
+    height: 2.5cm;
+    width: 19cm;
   }
 </style>
