@@ -5,11 +5,27 @@
   import MenuItem from "$lib/MenuItem.svelte"
 
   let items = [
-    { name: "Chicken Lollipop", price: 15, image: "/chickenlollipop.png" },
-    { name: "Butter Chicken", price: 19, image: "/chickenlollipop.png" },
-    { name: "Chilli Chicken", price: 19, image: "/chickenlollipop.png" },
-    { name: "Butter Chicken", price: 19, image: "/chickenlollipop.png" },
-    { name: "Chilli Chicken", price: 19, image: "/chickenlollipop.png" },
+    { name: "Samosas (1pc)", price: 3, image: "/samosa.jpg" },
+    { name: "Veg. Pakoras (10pcs)", price: 9, image: "/vegpakora.jpg" },
+    { name: "Chicken Lollipop (5pcs)", price: 15, image: "/chickenlollipop.png" },
+    { name: "Butter Chicken", price: 20, image: "/butterchicken.png" },
+    { name: "Lamb Curry", price: 20, image: "/placeholder.png" },
+    { name: "Chilli Chicken", price: 20, image: "/chillichicken.jpg" },
+    { name: "Chana Masala", price: 15, image: "/chickenlollipop.png" },
+    { name: "Lamb Kebab Wrap", price: 13, image: "/chickenlollipop.png" },
+    { name: "Lamb Kebab Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Chicken Tikka Wrap", price: 13, image: "/chickenlollipop.png" },
+    { name: "Chicken Tikka Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Chicken Chilli Wrap", price: 13, image: "/chickenlollipop.png" },
+    { name: "Chicken Chilli Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Butter Chicken Wrap", price: 13, image: "/chickenlollipop.png" },
+    { name: "Butter Chicken Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Lamb Tikka Wrap", price: 13, image: "/chickenlollipop.png" },
+    { name: "Lamb Tikka Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Fish Wrap", price: 13, image: "/chickenlollipop.png" },
+    { name: "Fish Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Samosa Wrap", price: 13, image: "/chickenlollipop.png" },
+    { name: "Samosa Salad", price: 13, image: "/chickenlollipop.png" },
   ]
 </script>
 
