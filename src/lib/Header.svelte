@@ -6,7 +6,9 @@
 
     <div class="order">
       <h2 class="cost">$0.00</h2>
-      <img src="cart.png" alt="cart" />
+      <a href="/Your Order">
+        <img src="cart.png" alt="cart" />
+      </a>
     </div>
   </div>
 </header>
