@@ -2,9 +2,8 @@
   import Header from "$lib/Header.svelte"
   import Nav from "$lib/Nav.svelte"
   import Footer from "$lib/Footer.svelte"
-  import MenuItem from "$lib/MenuItem.svelte"
 
-  export let userOrder = []
+  let userOrder = ""
   let orderPrice = 0
   let index = 0
 
@@ -12,6 +11,8 @@
     userOrder = [...userOrder, item.name, item.price]
     orderPrice = orderPrice + item.price
   }
+
+  function removeItem(item) {}
 
   // let streetFood = [
   //   { name: "Vada Pav (1pc)", price: 8, image: "/vadapav.jpg" },

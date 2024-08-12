@@ -34,6 +34,7 @@
         Catering Information (amount of people/possible food options etc.)<br />
         <input type="text" class="cateringInfo" />
       </label>
+      <button class="button">Submit</button>
     </div>
   </div>
 </main>
@@ -65,5 +66,15 @@
   .cateringInfo {
     height: 2.5cm;
     width: 19cm;
+  }
+
+  .button {
+    margin-left: 16.4cm;
+    font-size: 2ch;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background-color: #f27a2d;
   }
 </style>

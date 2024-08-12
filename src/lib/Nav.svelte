@@ -3,7 +3,7 @@
   <a href="/Menu">Menu</a>
   <a href="/Catering">Catering</a>
   <a href="/Contact Us">Contact Us</a>
-  <a href="/Order Now">Order Now</a>
+  <a href="/Menu">Order Now</a>
 </nav>
 
 <style>
