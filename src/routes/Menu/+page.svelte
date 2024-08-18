@@ -2,17 +2,16 @@
   import Header from "$lib/Header.svelte"
   import Nav from "$lib/Nav.svelte"
   import Footer from "$lib/Footer.svelte"
+  import { userOrder } from "$lib/stores.js"
+  import { orderPrice } from "$lib/stores.js"
 
-  let userOrder = ""
-  let orderPrice = 0
   let index = 0
 
   function addItem(item) {
-    userOrder = [...userOrder, item.name, item.price]
-    orderPrice = orderPrice + item.price
+    $orderPrice = $orderPrice + item.price
+    item = item.name + item.price
+    $userOrder = [...$userOrder, item]
   }
-
-  function removeItem(item) {}
 
   // let streetFood = [
   //   { name: "Vada Pav (1pc)", price: 8, image: "/vadapav.jpg" },
@@ -72,8 +71,9 @@
     {/each}
   </div>
 
-  {userOrder}<br />
-  <p>Order Price: ${orderPrice}</p>
+  <p>{$userOrder}</p>
+  <br />
+  <p>Order Price: ${$orderPrice}</p>
 
   <Footer />
 </body>

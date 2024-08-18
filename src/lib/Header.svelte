@@ -1,3 +1,7 @@
+<script>
+  import { orderPrice } from "$lib/stores.js"
+</script>
+
 <header class="hero">
   <div class="top">
     <div class="hero-body">
@@ -5,7 +9,7 @@
     </div>
 
     <div class="order">
-      <h2 class="cost">$0.00</h2>
+      <h2 class="cost">${$orderPrice}</h2>
       <a href="/Your Order">
         <img src="cart.png" alt="cart" />
       </a>
