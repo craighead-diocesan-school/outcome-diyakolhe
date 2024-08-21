@@ -9,7 +9,7 @@
 
   function addItem(item) {
     $orderPrice = $orderPrice + item.price
-    item = item.name + item.price
+    // item = item.name + item.price
     $userOrder = [...$userOrder, item]
   }
 
@@ -71,8 +71,6 @@
     {/each}
   </div>
 
-  <p>{$userOrder}</p>
-  <br />
   <p>Order Price: ${$orderPrice}</p>
 
   <Footer />
