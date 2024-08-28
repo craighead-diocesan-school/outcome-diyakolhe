@@ -10,10 +10,13 @@
   import { orders } from "$lib/stores.js"
 
   let index
-
-  function submitOrder() {
-    $orders = [...$orders, $userOrder]
-  }
+  let orderInfo = []
+  let name = ""
+  let phoneNumber = ""
+  let email = ""
+  let extraInfo = ""
+  let orderMethod = ""
+  let paymentMethod = ""
 
   function addItem(item) {
     $userOrder = [...$userOrder, item]
@@ -23,7 +26,32 @@
     $userOrder = [...$userOrder.slice(0, index), ...$userOrder.slice(index + 1)]
     $orderPrice = $orderPrice - item.price
   }
-  //add function to remove and add items that are already in the cart by linking each function to a + and - button which will be next to each of the items in the cart.
+
+  //push the userOrder to a bigger array that will contain all the orders
+
+  function submitOrder() {
+    orderInfo = [$userOrder, name, orderMethod, paymentMethod] //add the rest of the details later once it works
+    $orders = [...$orders, orderInfo]
+    // $userOrder = ""
+    // $orderPrice = 0
+  }
+
+  function pickUp() {
+    orderMethod = "Pick Up"
+  }
+
+  function delivery() {
+    orderMethod = "Delivery"
+    // add a surcharge to the total orderPrice and then disable both button so that it won't keep adding the surcharge onto the order if they keep changing their preference
+  }
+
+  function cash() {
+    paymentMethod = "Cash"
+  }
+
+  function eftpos() {
+    paymentMethod = "Eftpos"
+  }
 </script>
 
 <body>
@@ -48,34 +76,42 @@
           </li>
         {/each}
 
-        <p>${$orderPrice}<br /></p>
+        <p>Total Order Price: ${$orderPrice}<br /></p>
       </div>
       <div class="column">
         <label>
           Name:<br />
-          <input type="text" />
+          <input type="text" bind:value={name} />
         </label><br />
         <label>
           Phone Number:<br />
-          <input type="text" />
+          <input type="text" bind:value={phoneNumber} />
         </label><br />
         <label>
           Email Address:<br />
-          <input type="text" />
+          <input type="text" bind:value={email} />
         </label><br />
         <label>
           Other Information:<br />
-          <input type="text" />
+          <input type="text" bind:value={extraInfo} />
         </label><br />
 
-        <button>Pick Up</button>
-        <button>Delivery</button>
+        <button on:click={pickUp}>Pick Up</button>
+        <button on:click={delivery}>Delivery</button><br />
 
         <p>Payment Method</p>
-        <button>Cash</button>
-        <button>Eftpos</button><br />
+        <button on:click={cash}>Cash</button>
+        <button on:click={eftpos}>Eftpos</button><br />
 
-        <button on:click={submitOrder}>Submit</button>
+        <button on:click={submitOrder}>Submit Order</button>
+
+        {name}
+        {phoneNumber}
+        {email}
+        {extraInfo}
+
+        <p>Order Method: {orderMethod}</p>
+        <p>Payment Method: {paymentMethod}</p>
       </div>
     </div>
 
