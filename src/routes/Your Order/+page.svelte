@@ -91,6 +91,10 @@
           </li>
         {/each}
 
+        {#if $orderPrice > 0}
+          <button on:click={newOrder}>Restart Order</button>
+        {/if}
+
         <p>Total Order Price: ${$orderPrice}<br /></p>
       </div>
       <div class="column">

@@ -41,7 +41,7 @@
 
     { name: "Fish Wrap", price: 15, image: "/fishwrap.png" },
     { name: "Chicken Burger Combo", price: 14, image: "/chickenburgercombo.jpg" },
-    { name: "Crispy Chicken Tenders w/ chips and salads", price: 15, image: "/crispychickentenders.jpg" },
+    { name: "Crispy Chicken Tenders w/ chips and salad", price: 15, image: "/crispychickentenders.jpg" },
     { name: "Hot Chips", price: 5, image: "/hotchips.jpg" },
   ]
 </script>
@@ -69,7 +69,7 @@
     {/each}
   </div>
 
-  <p>Order Price: ${$orderPrice}</p>
+  <p>Order Price: {$orderPrice}</p>
 
   <Footer />
 </body>
@@ -83,6 +83,7 @@
   button {
     margin-bottom: 0.5cm;
   }
+
   img {
     height: 5cm;
     width: 5cm;
