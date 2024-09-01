@@ -23,29 +23,26 @@
   // ]
 
   let menuItems = [
-    { name: "Samosas (1pc)", price: 3, image: "/samosa.jpg" },
+    { name: "Samosas (1pc)", price: 3.5, image: "/samosa.jpg" },
     { name: "Veg. Pakoras (10pcs)", price: 9, image: "/vegpakora.jpg" },
-    { name: "Butter Chicken", price: 20, image: "/butterchicken.png" },
-    { name: "Chilli Chicken", price: 20, image: "/chillichicken.jpg" },
-    { name: "Lamb Tikka Wrap", price: 13, image: "/lambtikkawrap.jpg" },
-    { name: "Chicken Tikka Wrap", price: 13, image: "/chickentikkawrap.jpg" },
 
-    // { name: "Lamb Curry", price: 20, image: "/placeholder.png" },
-    // { name: "Chana Masala", price: 15, image: "/chickenlollipop.png" },
-    // { name: "Lamb Kebab Wrap", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Lamb Kebab Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Butter Chicken w/ rice (Regular)", price: 15, image: "/butterchicken.png" },
+    { name: "Butter Chicken w/ rice (Large)", price: 20, image: "/butterchicken.png" },
 
-    // { name: "Chicken Tikka Salad", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Chicken Chilli Wrap", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Chicken Chilli Salad", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Butter Chicken Wrap", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Butter Chicken Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Chilli Chicken w/ rice (Regular)", price: 15, image: "/chillichicken.jpg" },
+    { name: "Chilli Chicken w/ rice (Large)", price: 20, image: "/chillichicken.jpg" },
+    { name: "Chilli Chicken Wrap", price: 15, image: "/chillichickenwrap.png" },
 
-    // { name: "Lamb Tikka Salad", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Fish Wrap", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Fish Salad", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Samosa Wrap", price: 13, image: "/chickenlollipop.png" },
-    // { name: "Samosa Salad", price: 13, image: "/chickenlollipop.png" },
+    { name: "Lamb Tikka Wrap", price: 15, image: "/lambtikkawrap.jpg" },
+    { name: "Lamb Kebab Wrap", price: 15, image: "/lambkebabwrap.jpg" },
+
+    { name: "Chicken Tikka Wrap", price: 15, image: "/chickentikkawrap.jpg" },
+    { name: "Chicken Tikka Salad", price: 15, image: "/chickentikkasalad.jpg" },
+
+    { name: "Fish Wrap", price: 15, image: "/fishwrap.png" },
+    { name: "Chicken Burger Combo", price: 14, image: "/chickenburgercombo.jpg" },
+    { name: "Crispy Chicken Tenders w/ chips and salads", price: 15, image: "/crispychickentenders.jpg" },
+    { name: "Hot Chips", price: 5, image: "/hotchips.jpg" },
   ]
 </script>
 
@@ -60,7 +57,8 @@
       <div>
         <img src={item.image} alt="food" />
         <p>
-          {item.name} ${item.price}
+          {item.name}<br />
+          ${item.price}
           <button
             on:click={() => {
               addItem(item)
@@ -82,9 +80,13 @@
     color: white;
   }
 
+  button {
+    margin-bottom: 0.5cm;
+  }
   img {
     height: 5cm;
     width: 5cm;
+    margin-right: 1cm;
   }
 
   p {

@@ -2,6 +2,18 @@
   import Header from "$lib/Header.svelte"
   import Nav from "$lib/Nav.svelte"
   import Footer from "$lib/Footer.svelte"
+
+  let info = ""
+  let name = ""
+  let phoneNumber = ""
+  let email = ""
+  let cateringInfo = ""
+
+  function catering() {
+    info = [name, phoneNumber, email, cateringInfo]
+    //send the info variable to the business
+    alert("Your message has been sent to the business, we will get in touch with you as soon as possible")
+  }
 </script>
 
 <Header />
@@ -17,24 +29,24 @@
 
       <label>
         Name:<br />
-        <input type="text" />
+        <input type="text" bind:value={name} />
       </label><br />
       <label>
         Phone Number:<br />
-        <input type="text" />
+        <input type="text" bind:value={phoneNumber} />
       </label><br />
       <label>
         Email Address:<br />
-        <input type="text" />
+        <input type="text" bind:value={email} />
       </label><br />
     </div>
     <div class="column">
       <img src="promo video image.jpg" alt="food" />
       <label>
         Catering Information (amount of people/possible food options etc.)<br />
-        <input type="text" class="cateringInfo" />
+        <input type="text" class="cateringInfo" bind:value={cateringInfo} />
       </label>
-      <button class="button">Submit</button>
+      <button class="button" on:click={catering}>Submit</button>
     </div>
   </div>
 </main>

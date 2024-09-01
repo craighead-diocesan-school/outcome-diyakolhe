@@ -2,6 +2,17 @@
   import Header from "$lib/Header.svelte"
   import Nav from "$lib/Nav.svelte"
   import Footer from "$lib/Footer.svelte"
+
+  let info = ""
+  let name = ""
+  let phoneNumber = ""
+  let email = ""
+  let message = ""
+
+  function contactUs() {
+    info = [name, phoneNumber, email, message]
+    alert("Your message has been sent to the business, we will be in touch with you as soon as possible")
+  }
 </script>
 
 <Header />
@@ -16,29 +27,31 @@
     <div class="column is-one-third">
       <label>
         Name:<br />
-        <input type="text" />
+        <input type="text" bind:value={name} />
       </label><br />
       <label>
         Phone Number:<br />
-        <input type="text" />
+        <input type="text" bind:value={phoneNumber} />
       </label><br />
       <label>
         Email Address<br />
-        <input type="text" />
+        <input type="text" bind:value={email} />
       </label><br />
     </div>
     <div class="column">
       <label>
         Enter your message:<br />
-        <input type="text" class="info" />
+        <input type="text" class="info" bind:value={message} />
       </label><br />
     </div>
   </div>
 
   <div class="submit">
     <p>If you would like to directly get in touch with the business, please call or message on this phone number: 02112727868</p>
-    <button class="button">Submit</button>
+    <button class="button" on:click={contactUs}>Submit</button>
   </div>
+
+  {info}
 </main>
 <Footer />
 

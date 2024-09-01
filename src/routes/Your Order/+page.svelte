@@ -7,7 +7,6 @@
   import Footer from "$lib/Footer.svelte"
   import { userOrder } from "$lib/stores.js"
   import { orderPrice } from "$lib/stores.js"
-  import { orders } from "$lib/stores.js"
 
   let index
   let orderInfo = []
@@ -17,6 +16,7 @@
   let extraInfo = ""
   let orderMethod = ""
   let paymentMethod = ""
+  let orderStatus = ""
 
   function addItem(item) {
     $userOrder = [...$userOrder, item]
@@ -27,13 +27,26 @@
     $orderPrice = $orderPrice - item.price
   }
 
-  //push the userOrder to a bigger array that will contain all the orders
-
   function submitOrder() {
-    orderInfo = [$userOrder, name, orderMethod, paymentMethod] //add the rest of the details later once it works
-    $orders = [...$orders, orderInfo]
-    // $userOrder = ""
-    // $orderPrice = 0
+    orderInfo = [name, phoneNumber, email, extraInfo, orderMethod, paymentMethod]
+    orderStatus = "done"
+    alert("Your order has succesfully been submitted!")
+    //send all order info and userOrder to the business through email
+
+    newOrder()
+  }
+
+  function newOrder() {
+    orderInfo = []
+    name = ""
+    phoneNumber = ""
+    email = ""
+    extraInfo = ""
+    orderMethod = ""
+    paymentMethod = ""
+    orderStatus = ""
+    $userOrder = ""
+    $orderPrice = 0
   }
 
   function pickUp() {
@@ -41,8 +54,10 @@
   }
 
   function delivery() {
+    $orderPrice = $orderPrice + 5
     orderMethod = "Delivery"
-    // add a surcharge to the total orderPrice and then disable both button so that it won't keep adding the surcharge onto the order if they keep changing their preference
+
+    // add a surcharge to the total orderPrice and then disable both buttons so that it won't keep adding the surcharge onto the order everytime they press the buttons
   }
 
   function cash() {
@@ -92,12 +107,17 @@
           <input type="text" bind:value={email} />
         </label><br />
         <label>
-          Other Information:<br />
+          Other Information (For what time?):<br />
           <input type="text" bind:value={extraInfo} />
         </label><br />
 
-        <button on:click={pickUp}>Pick Up</button>
-        <button on:click={delivery}>Delivery</button><br />
+        {#if orderMethod == "Delivery"}
+          <button on:click={delivery} disabled>Delivery</button>
+          <button on:click={pickUp} disabled>Pick Up</button>
+        {:else}
+          <button on:click={delivery}>Delivery</button>
+          <button on:click={pickUp}>Pick Up</button>
+        {/if}
 
         <p>Payment Method</p>
         <button on:click={cash}>Cash</button>
@@ -105,19 +125,19 @@
 
         <button on:click={submitOrder}>Submit Order</button>
 
-        {name}
-        {phoneNumber}
-        {email}
-        {extraInfo}
-
         <p>Order Method: {orderMethod}</p>
         <p>Payment Method: {paymentMethod}</p>
       </div>
     </div>
 
-    {#each $orders as order}
-      <li>{order}</li>
-    {/each}
+    {#if orderStatus == "done"}
+      <p>Your Order:</p>
+      {#each $userOrder as item}
+        <li>{item.name} - ${item.price}</li>
+      {/each}
+      <p>Order Information:</p>
+      {orderInfo}
+    {/if}
   </main>
 
   <Footer />
