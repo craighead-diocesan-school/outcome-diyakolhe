@@ -13,6 +13,12 @@
     info = [name, phoneNumber, email, cateringInfo]
     //send the info variable to the business
     alert("Your message has been sent to the business, we will get in touch with you as soon as possible")
+
+    info = ""
+    name = ""
+    phoneNumber = ""
+    email = ""
+    cateringInfo = ""
   }
 </script>
 
@@ -59,20 +65,25 @@
     font-style: normal;
     color: white;
     font-size: 4ch;
+    padding-left: 0.4cm;
+    padding-top: 0.3cm;
   }
 
   p {
     color: white;
     font-size: 2.5ch;
+    padding-left: 0.4cm;
   }
 
   label {
     color: white;
+    padding-left: 0.4cm;
   }
 
   input {
     width: 12cm;
     margin-bottom: 0.4cm;
+    margin-left: 0.4cm;
   }
 
   .cateringInfo {

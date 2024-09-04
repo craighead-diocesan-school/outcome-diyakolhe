@@ -15,7 +15,9 @@
     <div class="columns">
       <div class="column is-one-fifth">
         <h2>About Us</h2>
-        <button class="orderNow">Order Now</button>
+        <a href="/Menu">
+          <button class="orderNow">Order Now</button>
+        </a>
       </div>
       <div class="column">
         <p class="info">Liquorice jujubes muffin cake gingerbread chocolate chocolate cake. Gummies cheesecake shortbread bear claw ice cream brownie. Chocolate lemon drops pie cupcake jujubes candy dragée. Candy powder halvah icing dessert cheesecake caramels I love gummi bears. Chocolate croissant cake bonbon chocolate cake. Chupa chups I love cookie fruitcake sweet roll dragée chocolate cookie. Lemon drops liquorice gummi bears I love halvah chupa chups. I love cheesecake bonbon brownie topping pastry liquorice marzipan. Marzipan toffee tart muffin carrot cake biscuit topping toffee pudding. Dragée bear claw ice cream sweet roll candy cake. Tiramisu brownie cake candy pudding ice cream jelly-o muffin. Gummi bears halvah candy sugar plum I love I love tootsie roll. Lollipop I love jelly beans oat cake donut icing gingerbread liquorice. Bear claw wafer I love ice cream gummi bears jelly-o soufflé bear claw lollipop. Halvah oat cake liquorice sesame snaps jelly toffee muffin.</p>

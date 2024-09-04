@@ -5,7 +5,12 @@
 <header class="hero">
   <div class="top">
     <div class="hero-body">
-      <h1 class="title">Bombay Street Feast</h1>
+      <div class="heading">
+        <a href="/">
+          <img class="logo" src="/logo.png" alt="logo" />
+        </a>
+        <h1 class="title">Bombay Street Feast</h1>
+      </div>
     </div>
 
     <div class="order">
@@ -19,7 +24,7 @@
 
 <style>
   h1 {
-    font-size: 7ch;
+    font-size: 10ch;
     color: white;
     font-family: "BenchNine", sans-serif;
     font-weight: 700;
@@ -38,6 +43,20 @@
   header {
     background-color: black;
     height: 17ch;
+  }
+
+  .heading {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo {
+    height: 2cm;
+  }
+
+  .title {
+    padding-top: 0.1cm;
+    padding-left: 0.5cm;
   }
 
   img {

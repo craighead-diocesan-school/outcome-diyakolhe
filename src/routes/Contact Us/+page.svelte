@@ -11,7 +11,14 @@
 
   function contactUs() {
     info = [name, phoneNumber, email, message]
+    //this info variable will be sent to the business.
     alert("Your message has been sent to the business, we will be in touch with you as soon as possible")
+
+    info = ""
+    name = ""
+    phoneNumber = ""
+    email = ""
+    message = ""
   }
 </script>
 
@@ -50,8 +57,6 @@
     <p>If you would like to directly get in touch with the business, please call or message on this phone number: 02112727868</p>
     <button class="button" on:click={contactUs}>Submit</button>
   </div>
-
-  {info}
 </main>
 <Footer />
 
@@ -62,6 +67,12 @@
 
   label {
     color: white;
+    padding-left: 0.4cm;
+  }
+
+  input {
+    margin-left: 0.4cm;
+    width: 10cm;
   }
 
   p {
@@ -83,12 +94,8 @@
     background-color: #f27a2d;
   }
 
-  input {
-    width: 10cm;
-  }
-
   .info {
     height: 4cm;
-    width: 21cm;
+    width: 20.2cm;
   }
 </style>

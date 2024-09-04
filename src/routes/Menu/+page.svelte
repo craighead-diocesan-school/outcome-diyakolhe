@@ -42,7 +42,7 @@
     { name: "Fish Wrap", price: 15, image: "/fishwrap.png" },
     { name: "Chicken Burger Combo", price: 14, image: "/chickenburgercombo.jpg" },
     { name: "Crispy Chicken Tenders w/ chips and salad", price: 15, image: "/crispychickentenders.jpg" },
-    { name: "Hot Chips", price: 5, image: "/hotchips.jpg" },
+    { name: "Hot Chips with sauce(s)", price: 5, image: "/hotchips.jpg" },
   ]
 </script>
 
@@ -97,5 +97,16 @@
   .container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
+  }
+
+  h2 {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 2ch;
+    padding-left: 1.4cm;
+    padding-top: 0.4cm;
+    padding-bottom: 0.3cm;
   }
 </style>
