@@ -30,8 +30,9 @@
   function submitOrder() {
     orderInfo = [name, phoneNumber, email, extraInfo, orderMethod, paymentMethod]
     orderStatus = "done"
-    alert("Your order has succesfully been submitted!")
     //send all order info and userOrder to the business through email
+
+    alert("Your order has succesfully been submitted!")
 
     newOrder()
   }

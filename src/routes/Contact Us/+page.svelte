@@ -22,6 +22,7 @@
   }
 </script>
 
+@@ -1,94 +1,101 @@
 <Header />
 <Nav />
 
@@ -57,6 +58,8 @@
     <p>If you would like to directly get in touch with the business, please call or message on this phone number: 02112727868</p>
     <button class="button" on:click={contactUs}>Submit</button>
   </div>
+
+  {info}
 </main>
 <Footer />
 
@@ -94,8 +97,13 @@
     background-color: #f27a2d;
   }
 
+  input {
+    width: 10cm;
+  }
+
   .info {
     height: 4cm;
+    width: 21cm;
     width: 20.2cm;
   }
 </style>
