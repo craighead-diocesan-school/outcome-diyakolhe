@@ -8,6 +8,8 @@
   import { userOrder } from "$lib/stores.js"
   import { orderPrice } from "$lib/stores.js"
 
+  export let form
+
   let index
   let orderInfo = []
   let name = ""
@@ -46,7 +48,7 @@
     orderMethod = ""
     paymentMethod = ""
     orderStatus = ""
-    $userOrder = ""
+    $userOrder = []
     $orderPrice = 0
   }
 
@@ -98,8 +100,64 @@
 
         <p>Total Order Price: ${$orderPrice}<br /></p>
       </div>
+
       <div class="column">
-        <label>
+        <div class="form">
+          <fieldset>
+            <form method="POST" action="?/sendEmail">
+              <div class="input">
+                <label for="to">To:</label>
+                <input name="to" type="email" value="bombaystreetfeast@gmail.com" />
+              </div>
+
+              <div class="input">
+                <label for="">Order</label>
+                <!-- {JSON.stringify($userOrder)} -->
+                {#each $userOrder as item}
+                  <input name="body" value="{item.name}, - ${item.price}" />
+                {/each}
+              </div>
+
+              <div class="input">
+                <label for="name">Name:</label>
+                <input name="name" type="text" value="" />
+              </div>
+
+              <div class="input">
+                <label for="method">Pick Up or Delivery:</label>
+                <input name="method" type="text" value="" />
+              </div>
+
+              <div class="input">
+                <label for="payment">Cash or Eftpos:</label>
+                <input name="payment" type="text" value="" />
+              </div>
+
+              <div class="input">
+                <label for="phone">Phone Number:</label>
+                <input name="phone" type="text" value="" />
+              </div>
+              <div class="input">
+                <label for="email">Email:</label>
+                <input name="email" type="text" value="" />
+              </div>
+              <div class="input">
+                <label for="address">Address(if delivery):</label>
+                <input name="address" type="text" value="" />
+              </div>
+
+              <div class="input">
+                <label for="other">Other Info:</label>
+                <input name="other" type="text" value="" />
+              </div>
+
+              <button type="submit">Send</button>
+            </form>
+            <p class="success">{form?.success || ""}</p>
+          </fieldset>
+        </div>
+
+        <!-- <label>
           Name:<br />
           <input type="text" bind:value={name} />
         </label><br />
@@ -114,7 +172,7 @@
         <label>
           Other Information (For what time?):<br />
           <input type="text" bind:value={extraInfo} />
-        </label><br />
+        </label><br /> -->
 
         {#if orderMethod == "Delivery"}
           <button on:click={delivery} disabled>Delivery</button>

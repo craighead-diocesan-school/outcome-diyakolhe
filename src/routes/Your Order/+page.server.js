@@ -10,19 +10,24 @@ export const actions = {
         const email = formData.get("to");
         const subject = formData.get("subject");
         const body = formData.get("body");
+        const name = formData.get("name");
+        const method = formData.get("method");
+        const payment = formData.get("payment");
+        const phone = formData.get("phone");
+        const emailAddress = formData.get("email");
+        const other = formData.get("other");
 
 
 
 
-       let html = "<h2>Hi user!</h2><pre>${body}</pre>";
+       let html = ""
 
        const message = {
         from: GOOGLE_EMAIL,
         to: email,
-        bcc:"hello@webjeda.com",
-        subject: subject,
-        text: body,
-        html: html,
+        subject: "NEW ORDER",
+        text: body + " " + name + " " + phone + " " + emailAddress + " " + other + " " +method + " " + payment,
+        html: body + " " + name + " " + phone + " " + emailAddress + " " + other + " " +method + " " + payment,
        };
 
        const sendEmail = async (message) => {
