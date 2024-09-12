@@ -12,7 +12,7 @@
     <div class="column is-two-fifths">
       <h2>From birthday parites, to events and functions, we cater for all.</h2>
       <br />
-      <p>For any catering inquires please contact us through phone or leave your details below and we will get back to you as soon as possible</p>
+      <p>For any catering inquires please contact us through phone at 0211272786 or through email at bombaystreetfeast@gmail.com</p>
       <br />
     </div>
     <div class="column">

@@ -20,7 +20,7 @@
         </a>
       </div>
       <div class="column">
-        <p class="info">The city of Mumbai is known for its distinctive street food where people gather at the roadside vendor stalls to eat small snacks in the evening. Our restaurant concept is just that, we bring you delicious food and drinks as if you were on an vibrant Mumbai Street served by our vendors. Here at Bombay Street Feast we offer an authentic tatse of Indian with our unique street food selection and mouth-watering menu of dishes that we encourage you to share - as we do in India.</p>
+        <p class="info">The city of Mumbai is known for its distinctive street food where people gather at the roadside vendor stalls to eat small snacks in the evening. Our concept is just that, we bring you delicious food and drinks as if you were on an vibrant Mumbai Street served by our vendors. Here at Bombay Street Feast we offer an authentic tatse of Indian with our unique street food selection with an amazing western twist and mouth-watering menu of dishes that we encourage you to share - as we do in India.</p>
       </div>
     </div>
   </main>

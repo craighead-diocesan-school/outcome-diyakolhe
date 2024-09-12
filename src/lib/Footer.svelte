@@ -14,9 +14,10 @@
   </div>
   <p>@bombaystreetfeast</p>
 
-  <!-- insert facebook and instagram logo which links to the social media pages -->
   <p>Call us:</p>
   <p>0211272786</p>
+  <p>Email us:</p>
+  <p>bombaystreetfeast@gmail.com</p>
   <p>&copy; Diya Kolhe and Bombay Street Feast 2024</p>
   <br />
 </footer>
