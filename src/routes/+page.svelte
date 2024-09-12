@@ -4,6 +4,10 @@
   import Footer from "$lib/Footer.svelte"
 </script>
 
+<svelte:head>
+  <title>Bombay Street Feast - Home</title>
+</svelte:head>
+
 <body>
   <Header />
   <Nav />

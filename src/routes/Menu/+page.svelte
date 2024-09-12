@@ -37,6 +37,10 @@
   ]
 </script>
 
+<svelte:head>
+  <title>Bombay Street Feast - Menu</title>
+</svelte:head>
+
 <body>
   <Header />
   <Nav />

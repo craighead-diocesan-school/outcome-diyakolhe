@@ -53,6 +53,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Bombay Street Feast - Your Order</title>
+</svelte:head>
+
 <body>
   <Header />
   <Nav />
