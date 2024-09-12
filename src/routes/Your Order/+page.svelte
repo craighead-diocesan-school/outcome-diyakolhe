@@ -8,6 +8,8 @@
   import { userOrder } from "$lib/stores.js"
   import { orderPrice } from "$lib/stores.js"
 
+  import { onMount } from "svelte"
+
   export let form
 
   let index
@@ -19,24 +21,22 @@
   let orderMethod = ""
   let paymentMethod = ""
   let orderStatus = ""
+  let orderString = ""
+
+  onMount(async () => {
+    $userOrder.forEach((item) => {
+      orderString += item.name + "- $" + item.price + ", "
+    })
+  })
 
   function addItem(item) {
     $userOrder = [...$userOrder, item]
     $orderPrice = $orderPrice + item.price
   }
+
   function removeItem(index, item) {
     $userOrder = [...$userOrder.slice(0, index), ...$userOrder.slice(index + 1)]
     $orderPrice = $orderPrice - item.price
-  }
-
-  function submitOrder() {
-    orderInfo = [name, phoneNumber, email, extraInfo, orderMethod, paymentMethod]
-    orderStatus = "done"
-    //send all order info and userOrder to the business through email
-
-    alert("Your order has succesfully been submitted!")
-
-    newOrder()
   }
 
   function newOrder() {
@@ -51,25 +51,6 @@
     $userOrder = []
     $orderPrice = 0
   }
-
-  function pickUp() {
-    orderMethod = "Pick Up"
-  }
-
-  function delivery() {
-    $orderPrice = $orderPrice + 5
-    orderMethod = "Delivery"
-
-    // add a surcharge to the total orderPrice and then disable both buttons so that it won't keep adding the surcharge onto the order everytime they press the buttons
-  }
-
-  function cash() {
-    paymentMethod = "Cash"
-  }
-
-  function eftpos() {
-    paymentMethod = "Eftpos"
-  }
 </script>
 
 <body>
@@ -82,11 +63,13 @@
           <li>
             {item.name} - ${item.price}
             <button
+              class="add"
               on:click={() => {
                 addItem(item)
               }}>+</button
             >
             <button
+              class="remove"
               on:click={() => {
                 removeItem(index, item)
               }}>-</button
@@ -112,10 +95,8 @@
 
               <div class="input">
                 <label for="">Order</label>
-                <!-- {JSON.stringify($userOrder)} -->
-                {#each $userOrder as item}
-                  <input name="body" value="{item.name}, - ${item.price}" />
-                {/each}
+
+                <input name="body" bind:value={orderString} />
               </div>
 
               <div class="input">
@@ -151,56 +132,13 @@
                 <input name="other" type="text" value="" />
               </div>
 
-              <button type="submit">Send</button>
+              <button type="submit">Submit</button>
             </form>
             <p class="success">{form?.success || ""}</p>
           </fieldset>
         </div>
-
-        <!-- <label>
-          Name:<br />
-          <input type="text" bind:value={name} />
-        </label><br />
-        <label>
-          Phone Number:<br />
-          <input type="text" bind:value={phoneNumber} />
-        </label><br />
-        <label>
-          Email Address:<br />
-          <input type="text" bind:value={email} />
-        </label><br />
-        <label>
-          Other Information (For what time?):<br />
-          <input type="text" bind:value={extraInfo} />
-        </label><br /> -->
-
-        {#if orderMethod == "Delivery"}
-          <button on:click={delivery} disabled>Delivery</button>
-          <button on:click={pickUp} disabled>Pick Up</button>
-        {:else}
-          <button on:click={delivery}>Delivery</button>
-          <button on:click={pickUp}>Pick Up</button>
-        {/if}
-
-        <p>Payment Method</p>
-        <button on:click={cash}>Cash</button>
-        <button on:click={eftpos}>Eftpos</button><br />
-
-        <button on:click={submitOrder}>Submit Order</button>
-
-        <p>Order Method: {orderMethod}</p>
-        <p>Payment Method: {paymentMethod}</p>
       </div>
     </div>
-
-    {#if orderStatus == "done"}
-      <p>Your Order:</p>
-      {#each $userOrder as item}
-        <li>{item.name} - ${item.price}</li>
-      {/each}
-      <p>Order Information:</p>
-      {orderInfo}
-    {/if}
   </main>
 
   <Footer />
@@ -221,12 +159,25 @@
     background-color: #f27a2d;
   }
 
-  p {
-    color: white;
+  .add {
+    background-color: white;
+    color: black;
+  }
+
+  .remove {
+    background-color: white;
+    color: black;
   }
 
   label {
+    color: black;
+  }
+
+  p {
     color: white;
+    font-family: "Karma", serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   li {

@@ -37,5 +37,8 @@
     color: white;
     font-size: 2.5ch;
     padding-left: 0.4cm;
+    font-family: "Karma", serif;
+    font-weight: 400;
+    font-style: normal;
   }
 </style>

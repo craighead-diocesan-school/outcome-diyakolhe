@@ -25,5 +25,8 @@
     color: white;
     text-align: center;
     font-size: 2ch;
+    font-family: "Karma", serif;
+    font-weight: 400;
+    font-style: normal;
   }
 </style>

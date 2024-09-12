@@ -25,6 +25,9 @@
   p {
     color: white;
     text-align: center;
+    font-family: "Karma", serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   img {

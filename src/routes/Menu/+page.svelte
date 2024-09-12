@@ -9,18 +9,9 @@
 
   function addItem(item) {
     $orderPrice = $orderPrice + item.price
-    // item = item.name + item.price
+
     $userOrder = [...$userOrder, item]
   }
-
-  // let streetFood = [
-  //   { name: "Vada Pav (1pc)", price: 8, image: "/vadapav.jpg" },
-  //   { name: "Veg. Manchurian", price: "?", image: "/vegmanchurian.jpg" },
-  //   { name: "Chicken Lollipop (5pcs)", price: 15, image: "/chickenlollipop.png" },
-  //   { name: "Chaat Papdi ", price: "?", image: "/chaatpapdi.jpg" },
-  //   { name: "Dahi Puri ", price: "?", image: "/dahipuri.jpg" },
-  //   { name: "Pav Bhaji ", price: "?", image: "/pavbhaji.jpg" },
-  // ]
 
   let menuItems = [
     { name: "Samosas (1pc)", price: 3.5, image: "/samosa.jpg" },
@@ -69,8 +60,6 @@
     {/each}
   </div>
 
-  <p>Order Price: {$orderPrice}</p>
-
   <Footer />
 </body>
 
@@ -92,6 +81,9 @@
 
   p {
     color: white;
+    font-family: "Karma", serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .container {
